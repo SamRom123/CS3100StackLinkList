@@ -41,14 +41,15 @@ valueT Pop(stackT *stack) {
 	}
 	valueT returner = stack->head->value;				//Stores the value from the first node into returner
 	
-	stackT *temp = (stackT *)malloc(sizeof(stackT));	//Creates a temp node to store the location of the next node
-	temp->head = stack->head->next;						//Points the temp ptr to the second item in the list
+	//stackT *temp = (stackT *)malloc(sizeof(stackT));	//Creates a temp node to store the location of the next node
+	stackT temp;
+	temp.head = stack->head->next;						//Points the temp ptr to the second item in the list
 	
 	free(stack->head);									//Frees the current node
 
-	stack->head = temp->head;							//Points head to the new first node
+	stack->head = temp.head;							//Points head to the new first node
 
-	free(temp);											//Frees the temp stackT struct
+	//free(temp);											//Frees the temp stackT struct
 	return returner;									//Returns the value in the now deleted node
 
 
