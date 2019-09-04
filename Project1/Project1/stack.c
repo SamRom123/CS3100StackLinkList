@@ -48,6 +48,7 @@ valueT Pop(stackT *stack) {
 
 	stack->head = temp->head;							//Points head to the new first node
 
+	free(temp);											//Frees the temp stackT struct
 	return returner;									//Returns the value in the now deleted node
 
 
