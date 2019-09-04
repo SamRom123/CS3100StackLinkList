@@ -62,6 +62,7 @@ void EmptyStack(stackT *stack) {
 		free(stack->head);								//Frees the first node
 		stack->head = temp->head;						//Points head to the new first node in the stack
 	}
+	free(temp);
 	return;
 }
 //If the stack is empty, delete the node pointing to null
