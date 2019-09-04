@@ -39,20 +39,18 @@ valueT Pop(stackT *stack) {
 		fprintf(stderr, "Nothing in the stack \n");		//Prints an error stating the stack is empty
 		return 0;
 	}
-	valueT returner = stack->head->value;				//Stores the value from the first node into returner
 	
-	//stackT *temp = (stackT *)malloc(sizeof(stackT));	//Creates a temp node to store the location of the next node
-	stackT temp;
-	temp.head = stack->head->next;						//Points the temp ptr to the second item in the list
+	valueT valueHolder;
 	
-	free(stack->head);									//Frees the current node
+	stackT *temp = (stackT *)malloc(sizeof(stackT));	//Creates a temp node to store the location of the next node
+	
+	temp = stack->head;									//Points our temp stackT struct to the start of the stack
+	valueHolder = stack->head->value;					//Grabs the value in the first node of the stack
+	stack->head = stack->head->next;					//Points head to the next value of the stack
 
-	stack->head = temp.head;							//Points head to the new first node
+	free(temp);											//Frees the node that has been popped
 
-	//free(temp);											//Frees the temp stackT struct
-	return returner;									//Returns the value in the now deleted node
-
-
+	return valueHolder;
 }
 //Deletes all items/nodes in the stack
 void EmptyStack(stackT *stack) {
