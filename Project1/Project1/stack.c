@@ -21,6 +21,7 @@ void Push(stackT *stack, valueT value) {
 	temp->value = value;							//Places the passed in value into the temp node
 
 	if (stack->head == NULL) {						//Checks if the stack is empty
+		free(stack->head);							//Deletes the empty malloc used to build the struct
 		stack->head = temp;							//Points the head ptr to the address of the temp node
 		stack->head->next = NULL;					//This node will always be the last node, so sets "next" to point to NULL
 		return;
