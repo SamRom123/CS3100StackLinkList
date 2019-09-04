@@ -1,4 +1,2 @@
 ﻿  stack.c
-c:\users\romin\onedrive\cs3100\stack link list test\project1\project1\stack.c(8): warning C4013: 'malloc' undefined; assuming extern returning int
-c:\users\romin\onedrive\cs3100\stack link list test\project1\project1\stack.c(45): warning C4013: 'free' undefined; assuming extern returning int
   Project1.vcxproj -> C:\Users\romin\OneDrive\CS3100\stack link list test\Project1\Debug\Project1.exe
