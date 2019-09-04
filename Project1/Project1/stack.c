@@ -71,7 +71,8 @@ void FreeStack(stackT *stack) {
 		return;
 	}
 
-	free(stack);										//Frees the stack
+	free(stack->head);										//Frees the stack
+	free(stack);
 	return;
 }
 //Checks if the stack is empty
