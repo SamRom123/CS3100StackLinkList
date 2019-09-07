@@ -21,7 +21,6 @@ void Push(stackT *stack, valueT value) {
 	temp->value = value;							//Places the passed in value into the temp node
 
 	if (stack->head == NULL) {						//Checks if the stack is empty
-		free(stack->head);							//Deletes the empty malloc used to build the struct
 		stack->head = temp;							//Points the head ptr to the address of the temp node
 		stack->head->next = NULL;					//This node will always be the last node, so sets "next" to point to NULL
 		return;
@@ -42,8 +41,8 @@ valueT Pop(stackT *stack) {
 	
 	valueT valueHolder;
 	
-	stackT *temp = (stackT *)malloc(sizeof(stackT));	//Creates a temp node to store the location of the next node
-	
+	//stackT *temp = (stackT *)malloc(sizeof(stackT));	//Creates a temp node to store the location of the next node
+	stackT *temp;
 	temp = stack->head;									//Points our temp stackT struct to the start of the stack
 	valueHolder = stack->head->value;					//Grabs the value in the first node of the stack
 	stack->head = stack->head->next;					//Points head to the next value of the stack
