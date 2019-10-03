@@ -1,4 +1,4 @@
-# CS3100StackLinkList
+#StackLinkList
 (View as "Raw" or "Blame")
 This is an assignemnt from my operating systems class where I asked to create a stack based on a linked list in C.
 I also had to make sure that the program to compile in linux, along with an appropriate makefile.
